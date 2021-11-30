@@ -1,0 +1,39 @@
+ALGORITHM algorithm_2
+VAR
+    array_one:array OF INTEGER;
+    array_two:array OF INTEGER;
+    i:INTEGER;
+    j:INTEGER;
+    sum:INTEGER:=0;
+    k:INTEGER;
+    l:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO length(array_one)-1 STEP 1  DO
+        Read(array_one[i])
+    END_FOR
+    FOR j FROM 0 TO length(array_two)-1 STEP 1  DO
+    Read(array_two[j])
+    END_FOR
+
+    FOR k FROM 0 TO length(array_one)-1 STEP 1  DO
+        FOR m FROM 0 TO length (array_two)-1 STEP 1  DO
+            IF (array_one[k]<>array_two[m]) THEN
+                l:=l+1
+            END_IF
+            IF (l=length(array_two)) THEN
+                sum:=sum+array_one[k]
+            END_IF
+        END_FOR
+    END_FOR
+    FOR k FROM 0 TO length(array_two)-1 STEP 1  DO
+    FOR m FROM 0 TO length(array_one)-1 STEP 1  DO
+        IF (array_one[m]<>array_two[k]) THEN
+            n:=n+1
+        END_IF
+        IF (l:=length(array_one)) THEN
+            sum:=sum+array_two[k]
+        END_IF
+    END_FOR
+    Write(sum)
+    END_FOR
+END
